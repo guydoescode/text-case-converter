@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Case Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body class="bg-white">
+    <div class="container mx-auto py-12">
+        <div class="max-w-lg mx-auto bg-white p-8 rounded-lg">
+            <form class="mb-8">
+                <textarea id="stringbox"
+                    class="w-full px-3 py-2 leading-tight text-gray-700 border rounded focus:outline-none focus:shadow-outline"
+                    placeholder="Enter text here...">
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores.</textarea>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="return convertstring(stringbox, 'sentencecase')" class="btn-primary">
+                        <b>Sentence Case</b>
+                    </button>
+                    <button onclick="return convertstring(stringbox, 'titlecase')" class="btn-primary">
+                        <b>Title Case</b>
+                    </button>
+                    <button onclick="return convertstring(stringbox, 'capitalcase')" class="btn-primary">
+                        <b>Capital Case</b>
+                    </button>
+                    <button onclick="return convertstring(stringbox, 'lowercase')" class="btn-primary">
+                        <b>Lower Case</b>
+                    </button>
+                    <button onclick="return convertstring(stringbox, 'uppercase')" class="btn-primary">
+                        <b>Upper Case</b>
+                    </button>
+                </div>
+            </form>
+            <p class="text-sm text-gray-600">
+                Here is an explanation of all the different modes this tool supports:
+            </p>
+            <ul class="list-disc pl-6 mt-4">
+                <li>
+                    <b>Sentence Case:</b> Makes everything lowercase <b>except</b> the
+                    first character and "I".
+                </li>
+                <li>
+                    <b>Title Case:</b> Capitalize the first character of each word
+                    <b>except</b> common stop words like 'and', 'at' etc
+                </li>
+                <li>
+                    <b>Capital Case:</b> Capitalize the first character of each word.
+                </li>
+                <li><b>Lower Case:</b> Lower Case everything inside the string.</li>
+                <li><b>Upper Case:</b> Upper Case everything inside the string.</li>
+            </ul>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
